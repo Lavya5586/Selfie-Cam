@@ -11,7 +11,7 @@ var Content = event.results[0][0].transcript;
 
     document.getElementById("textbox").innerHTML = Content;
     console.log(Content);
-    if(Content == "Take My Selfie")
+    if(Content == "take my selfie")
     {
         speak();
         console.log("Taking Selfie!!");
@@ -30,7 +30,8 @@ function speak()
 {
     var synth = window.speechSynthesis;
     speak_data = "Taking Your Selfie In 5 Seconds";
-    var utterThis = SpeechSynthesisUtterance(speak_data);
+  //I only added the word, "new" in the below line and it worked! 
+    var utterThis = new SpeechSynthesisUtterance(speak_data);
     synth.speak(utterThis);
     Webcam.attach(camera);
 
